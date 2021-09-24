@@ -13,6 +13,9 @@
 		885B219F26FE4F6E00D15041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885B219D26FE4F6E00D15041 /* Main.storyboard */; };
 		885B21A126FE4F7000D15041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885B21A026FE4F7000D15041 /* Assets.xcassets */; };
 		885B21A426FE4F7000D15041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885B21A226FE4F7000D15041 /* LaunchScreen.storyboard */; };
+		885B21B026FE50B200D15041 /* Mars Rover Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B21AF26FE50B200D15041 /* Mars Rover Photos.swift */; };
+		885B21B226FE54BD00D15041 /* Astronomy Picture of the Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */; };
+		885B21B426FE569100D15041 /* Geomagnetic Storm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B21B326FE569100D15041 /* Geomagnetic Storm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		885B21A026FE4F7000D15041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		885B21A326FE4F7000D15041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		885B21A526FE4F7000D15041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885B21AF26FE50B200D15041 /* Mars Rover Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mars Rover Photos.swift"; sourceTree = "<group>"; };
+		885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Astronomy Picture of the Day.swift"; sourceTree = "<group>"; };
+		885B21B326FE569100D15041 /* Geomagnetic Storm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geomagnetic Storm.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,12 @@
 		885B218B26FE4F6E00D15041 = {
 			isa = PBXGroup;
 			children = (
+				885B21B326FE569100D15041 /* Geomagnetic Storm.swift */,
+				885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */,
+				885B21AF26FE50B200D15041 /* Mars Rover Photos.swift */,
+				885B21AB26FE4F9900D15041 /* ViewControllers */,
+				885B21AC26FE4FAB00D15041 /* Storyboards */,
+				885B21AE26FE500300D15041 /* Resources */,
 				885B219626FE4F6E00D15041 /* NasaApp */,
 				885B219526FE4F6E00D15041 /* Products */,
 			);
@@ -56,15 +68,44 @@
 		885B219626FE4F6E00D15041 /* NasaApp */ = {
 			isa = PBXGroup;
 			children = (
-				885B219726FE4F6E00D15041 /* AppDelegate.swift */,
-				885B219926FE4F6E00D15041 /* SceneDelegate.swift */,
-				885B219B26FE4F6E00D15041 /* ViewController.swift */,
-				885B219D26FE4F6E00D15041 /* Main.storyboard */,
-				885B21A026FE4F7000D15041 /* Assets.xcassets */,
-				885B21A226FE4F7000D15041 /* LaunchScreen.storyboard */,
-				885B21A526FE4F7000D15041 /* Info.plist */,
+				885B21AD26FE4FF400D15041 /* App */,
 			);
 			path = NasaApp;
+			sourceTree = "<group>";
+		};
+		885B21AB26FE4F9900D15041 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				885B219B26FE4F6E00D15041 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		885B21AC26FE4FAB00D15041 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				885B219D26FE4F6E00D15041 /* Main.storyboard */,
+				885B21A226FE4F7000D15041 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		885B21AD26FE4FF400D15041 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				885B219726FE4F6E00D15041 /* AppDelegate.swift */,
+				885B219926FE4F6E00D15041 /* SceneDelegate.swift */,
+				885B21A526FE4F7000D15041 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		885B21AE26FE500300D15041 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				885B21A026FE4F7000D15041 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				885B21B226FE54BD00D15041 /* Astronomy Picture of the Day.swift in Sources */,
 				885B219C26FE4F6E00D15041 /* ViewController.swift in Sources */,
+				885B21B426FE569100D15041 /* Geomagnetic Storm.swift in Sources */,
 				885B219826FE4F6E00D15041 /* AppDelegate.swift in Sources */,
 				885B219A26FE4F6E00D15041 /* SceneDelegate.swift in Sources */,
+				885B21B026FE50B200D15041 /* Mars Rover Photos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QQ7NB58NL6;
-				INFOPLIST_FILE = NasaApp/Info.plist;
+				INFOPLIST_FILE = NasaApp/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.NasaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QQ7NB58NL6;
-				INFOPLIST_FILE = NasaApp/Info.plist;
+				INFOPLIST_FILE = NasaApp/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.NasaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
