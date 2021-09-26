@@ -46,10 +46,19 @@ class MainViewController: UICollectionViewController {
         switch userAction {
         case .downloadImage: performSegue(withIdentifier: "showImage", sender: nil)
         case .pictureOfToday: pictureOfTodayButtonPressed()
-        case .marsRoverPhotos: marsRoverPhotosButtonPressed()
+        case .marsRoverPhotos: performSegue(withIdentifier: "marsRover", sender: nil)
         case .geomagneticStorm: geomagneticStormButtonPressed()
         }
     }
+
+
+// MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "marsRover" {
+        guard let marsRoverVC = segue.destination as? MarsRoverTableViewController else { return }
+        marsRoverVC.fetchMarsRoversInfo()
+    }
+}
 }
 // MARK: - Networking
 extension MainViewController {
@@ -82,8 +91,8 @@ extension MainViewController {
             }
             
             do {
-                let photo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
-                print(photo)
+                let roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
+                print(roverInfo)
             }catch let error {
                 print(error.localizedDescription)
             }

@@ -62,11 +62,96 @@
                     <navigationItem key="navigationItem" title="MainViewController" id="m5e-sJ-aY5"/>
                     <connections>
                         <segue destination="2ln-hn-9S1" kind="show" identifier="showImage" id="cEF-Ho-XPf"/>
+                        <segue destination="9af-u9-qsW" kind="show" identifier="marsRover" id="oJA-k7-9hd"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jci-X0-HTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1215" y="237"/>
+        </scene>
+        <!--Mars Rover Table View Controller-->
+        <scene sceneID="6iA-oo-bbZ">
+            <objects>
+                <tableViewController id="9af-u9-qsW" customClass="MarsRoverTableViewController" customModule="NasaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OJk-L0-SIB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="BI2-Yf-X6t" customClass="MarsRoverCell" customModule="NasaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BI2-Yf-X6t" id="ngh-AP-at0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R4z-AC-Cl2">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="rV6-qc-uev"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Rover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obM-yk-CwB">
+                                            <rect key="frame" x="158" y="11" width="186" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="GfR-Jn-Gqs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID of photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-ds-aXZ">
+                                            <rect key="frame" x="158" y="64" width="186" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Gv2-nw-9V4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccz-2j-8yP">
+                                            <rect key="frame" x="158" y="92" width="186" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="SeJ-sw-3U7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ccz-2j-8yP" firstAttribute="top" secondItem="ApV-ds-aXZ" secondAttribute="bottom" constant="8" id="2JM-Pb-Zqe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ccz-2j-8yP" secondAttribute="trailing" constant="15" id="5YJ-p3-Vmz"/>
+                                        <constraint firstItem="ccz-2j-8yP" firstAttribute="leading" secondItem="R4z-AC-Cl2" secondAttribute="trailing" constant="8" id="7Nr-Zx-H47"/>
+                                        <constraint firstItem="obM-yk-CwB" firstAttribute="leading" secondItem="R4z-AC-Cl2" secondAttribute="trailing" constant="8" id="FM2-Ai-cDn"/>
+                                        <constraint firstItem="R4z-AC-Cl2" firstAttribute="leading" secondItem="ngh-AP-at0" secondAttribute="leading" id="Jby-Hb-uDF"/>
+                                        <constraint firstItem="R4z-AC-Cl2" firstAttribute="top" secondItem="ngh-AP-at0" secondAttribute="top" id="W1w-zz-sU8"/>
+                                        <constraint firstItem="obM-yk-CwB" firstAttribute="top" secondItem="ngh-AP-at0" secondAttribute="topMargin" id="btu-Lg-RNz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="obM-yk-CwB" secondAttribute="trailing" constant="15" id="cQj-CL-FIn"/>
+                                        <constraint firstAttribute="bottom" secondItem="R4z-AC-Cl2" secondAttribute="bottom" id="f0Z-yg-uYt"/>
+                                        <constraint firstItem="ApV-ds-aXZ" firstAttribute="top" secondItem="obM-yk-CwB" secondAttribute="bottom" constant="8" id="tXB-v8-2UY"/>
+                                        <constraint firstItem="ApV-ds-aXZ" firstAttribute="leading" secondItem="R4z-AC-Cl2" secondAttribute="trailing" constant="8" id="uvf-hf-Xvo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ApV-ds-aXZ" secondAttribute="trailing" constant="15" id="xOw-oR-68l"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateOfPhoto" destination="ccz-2j-8yP" id="eA7-tl-Af0"/>
+                                    <outlet property="idPhoto" destination="ApV-ds-aXZ" id="BW7-IU-6Av"/>
+                                    <outlet property="marsRoverPhoto" destination="R4z-AC-Cl2" id="lqM-ya-adH"/>
+                                    <outlet property="nameOfRover" destination="obM-yk-CwB" id="YCM-57-r2C"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9af-u9-qsW" id="LpW-2U-gmo"/>
+                            <outlet property="delegate" destination="9af-u9-qsW" id="XrG-Ne-465"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="78h-IC-PhP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwr-JM-ZHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997.5999999999999" y="753.37331334332839"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="KC7-ye-7KK">

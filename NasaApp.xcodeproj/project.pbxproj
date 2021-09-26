@@ -20,6 +20,8 @@
 		88DA62762700508B00BAF9D1 /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62752700508A00BAF9D1 /* UserActionCell.swift */; };
 		88DA62782700AF0200BAF9D1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62772700AF0200BAF9D1 /* Photo.swift */; };
 		88DA627B2700B74700BAF9D1 /* GeomagneticStorm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA627A2700B74700BAF9D1 /* GeomagneticStorm.swift */; };
+		88DA627D2700F63D00BAF9D1 /* MarsRoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA627C2700F63D00BAF9D1 /* MarsRoverTableViewController.swift */; };
+		88DA62812701008E00BAF9D1 /* MarsRoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		88DA62752700508A00BAF9D1 /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
 		88DA62772700AF0200BAF9D1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		88DA627A2700B74700BAF9D1 /* GeomagneticStorm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeomagneticStorm.swift; sourceTree = "<group>"; };
+		88DA627C2700F63D00BAF9D1 /* MarsRoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverTableViewController.swift; sourceTree = "<group>"; };
+		88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				885B219B26FE4F6E00D15041 /* ImageViewController.swift */,
 				88DA627327004E6D00BAF9D1 /* MainViewController.swift */,
 				88DA62752700508A00BAF9D1 /* UserActionCell.swift */,
+				88DA627C2700F63D00BAF9D1 /* MarsRoverTableViewController.swift */,
+				88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,9 +211,11 @@
 				88DA62762700508B00BAF9D1 /* UserActionCell.swift in Sources */,
 				885B219A26FE4F6E00D15041 /* SceneDelegate.swift in Sources */,
 				885B21B026FE50B200D15041 /* Mars Rover Photos.swift in Sources */,
+				88DA62812701008E00BAF9D1 /* MarsRoverCell.swift in Sources */,
 				88DA627B2700B74700BAF9D1 /* GeomagneticStorm.swift in Sources */,
 				88DA62782700AF0200BAF9D1 /* Photo.swift in Sources */,
 				88DA627427004E6D00BAF9D1 /* MainViewController.swift in Sources */,
+				88DA627D2700F63D00BAF9D1 /* MarsRoverTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
