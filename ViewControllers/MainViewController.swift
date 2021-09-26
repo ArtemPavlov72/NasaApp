@@ -9,9 +9,9 @@ import UIKit
 
 enum Link: String {
     case imageURL = "https://apod.nasa.gov/apod/image/2109/RedSquare_Tuthill_960.jpg"
-    case pictureOfToday = "https://apod.nasa.gov/apod/astropix.html"
-    case marsRoverPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY"
-    case geomagneticStorm = "https://api.nasa.gov/DONKI/GST?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=DEMO_KEY"
+    case pictureOfToday = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+    case marsRoverPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
+    case geomagneticStorm = "https://api.nasa.gov/DONKI/GST?startDate=2016-01-01&endDate=2016-01-30&api_key=DEMO_KEY"
 }
 
 enum UserAction: String, CaseIterable {
@@ -54,15 +54,60 @@ class MainViewController: UICollectionViewController {
 // MARK: - Networking
 extension MainViewController {
     private func pictureOfTodayButtonPressed() {
+        guard let url = URL(string: Link.pictureOfToday.rawValue) else { return }
         
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            do {
+                let photo = try JSONDecoder().decode(PhotoOfToday.self, from: data)
+                print(photo)
+            }catch let error {
+                print(error.localizedDescription)
+            }
+            
+        }.resume()
     }
     
     private func marsRoverPhotosButtonPressed() {
+        guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
         
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            do {
+                let photo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
+                print(photo)
+            }catch let error {
+                print(error.localizedDescription)
+            }
+            
+        }.resume()
     }
     
     private func geomagneticStormButtonPressed() {
+        guard let url = URL(string: Link.geomagneticStorm.rawValue) else { return }
         
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            do {
+                let geomagneticStorm = try JSONDecoder().decode([GeomagneticStorm].self, from: data)
+                print(geomagneticStorm)
+            }catch let error {
+                print(error.localizedDescription)
+            }
+            
+        }.resume()
     }
     
 }
