@@ -81,7 +81,8 @@ extension MainViewController {
         }.resume()
     }
     
-    private func marsRoverPhotosButtonPressed() {
+  // Ниже функцию заводил для проверки, данные загружаются
+  /*   private func marsRoverPhotosButtonPressed() {
         guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -99,6 +100,7 @@ extension MainViewController {
             
         }.resume()
     }
+    */
     
     private func geomagneticStormButtonPressed() {
         guard let url = URL(string: Link.geomagneticStorm.rawValue) else { return }
