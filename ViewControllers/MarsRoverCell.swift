@@ -8,7 +8,7 @@
 import UIKit
 
 class MarsRoverCell: UITableViewCell {
-
+    
     @IBOutlet var marsRoverPhoto: UIImageView!
     @IBOutlet var nameOfRover: UILabel!
     @IBOutlet var idPhoto: UILabel!
@@ -26,8 +26,7 @@ class MarsRoverCell: UITableViewCell {
             }
         }
     }
- 
-    }
+}
 
    
 
