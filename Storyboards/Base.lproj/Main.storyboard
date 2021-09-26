@@ -3,12 +3,13 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--MainViewController-->
         <scene sceneID="PWL-U7-405">
             <objects>
                 <collectionViewController id="tK8-OJ-CEv" customClass="MainViewController" customModule="NasaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +43,7 @@
                                         <constraint firstItem="TwR-Kg-SFc" firstAttribute="centerX" secondItem="22Q-ES-Fax" secondAttribute="centerX" id="AgH-mA-tKe"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <color key="backgroundColor" red="0.30149926960000001" green="0.29382866800000002" blue="0.78474716909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="15"/>
@@ -58,11 +59,50 @@
                             <outlet property="delegate" destination="tK8-OJ-CEv" id="0zK-bK-fs6"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="m5e-sJ-aY5"/>
+                    <navigationItem key="navigationItem" title="MainViewController" id="m5e-sJ-aY5"/>
+                    <connections>
+                        <segue destination="2ln-hn-9S1" kind="show" identifier="showImage" id="cEF-Ho-XPf"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jci-X0-HTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1215" y="237"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="KC7-ye-7KK">
+            <objects>
+                <viewController id="2ln-hn-9S1" customClass="ImageViewController" customModule="NasaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jHg-pL-Smn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-uJ-bMf">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Axr-qV-oJl">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UHa-0u-vU1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R0b-uJ-bMf" firstAttribute="top" secondItem="UHa-0u-vU1" secondAttribute="top" id="GUh-ru-j5A"/>
+                            <constraint firstItem="R0b-uJ-bMf" firstAttribute="bottom" secondItem="jHg-pL-Smn" secondAttribute="bottom" id="MoQ-jo-ZeK"/>
+                            <constraint firstItem="Axr-qV-oJl" firstAttribute="centerY" secondItem="jHg-pL-Smn" secondAttribute="centerY" id="TK8-FC-Hf0"/>
+                            <constraint firstItem="Axr-qV-oJl" firstAttribute="centerX" secondItem="jHg-pL-Smn" secondAttribute="centerX" id="heJ-Jn-2K1"/>
+                            <constraint firstItem="R0b-uJ-bMf" firstAttribute="leading" secondItem="UHa-0u-vU1" secondAttribute="leading" id="qa9-xx-hvx"/>
+                            <constraint firstItem="R0b-uJ-bMf" firstAttribute="trailing" secondItem="UHa-0u-vU1" secondAttribute="trailing" id="tRV-xW-TvV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8wH-zQ-g6e"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Axr-qV-oJl" id="lUq-US-QLn"/>
+                        <outlet property="imageView" destination="R0b-uJ-bMf" id="Yh4-LY-ctn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifz-RM-sJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997.5999999999999" y="-143.47826086956522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fQF-t9-VQN">
@@ -86,9 +126,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

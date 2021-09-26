@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		885B219826FE4F6E00D15041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219726FE4F6E00D15041 /* AppDelegate.swift */; };
 		885B219A26FE4F6E00D15041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219926FE4F6E00D15041 /* SceneDelegate.swift */; };
-		885B219C26FE4F6E00D15041 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219B26FE4F6E00D15041 /* ViewController.swift */; };
+		885B219C26FE4F6E00D15041 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219B26FE4F6E00D15041 /* ImageViewController.swift */; };
 		885B219F26FE4F6E00D15041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885B219D26FE4F6E00D15041 /* Main.storyboard */; };
 		885B21A126FE4F7000D15041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885B21A026FE4F7000D15041 /* Assets.xcassets */; };
 		885B21A426FE4F7000D15041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885B21A226FE4F7000D15041 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		885B219426FE4F6E00D15041 /* NasaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885B219726FE4F6E00D15041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		885B219926FE4F6E00D15041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		885B219B26FE4F6E00D15041 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		885B219B26FE4F6E00D15041 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		885B219E26FE4F6E00D15041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		885B21A026FE4F7000D15041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		885B21A326FE4F7000D15041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		885B21AB26FE4F9900D15041 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				885B219B26FE4F6E00D15041 /* ViewController.swift */,
+				885B219B26FE4F6E00D15041 /* ImageViewController.swift */,
 				88DA627327004E6D00BAF9D1 /* MainViewController.swift */,
 				88DA62752700508A00BAF9D1 /* UserActionCell.swift */,
 			);
@@ -185,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				885B21B226FE54BD00D15041 /* Astronomy Picture of the Day.swift in Sources */,
-				885B219C26FE4F6E00D15041 /* ViewController.swift in Sources */,
+				885B219C26FE4F6E00D15041 /* ImageViewController.swift in Sources */,
 				885B21B426FE569100D15041 /* Geomagnetic Storm.swift in Sources */,
 				885B219826FE4F6E00D15041 /* AppDelegate.swift in Sources */,
 				88DA62762700508B00BAF9D1 /* UserActionCell.swift in Sources */,
