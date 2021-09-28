@@ -50,15 +50,15 @@ class MainViewController: UICollectionViewController {
         case .geomagneticStorm: geomagneticStormButtonPressed()
         }
     }
-
-
-// MARK: - Navigation
+    
+    
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "marsRover" {
-        guard let marsRoverVC = segue.destination as? MarsRoverTableViewController else { return }
-        marsRoverVC.fetchMarsRoversInfo()
+        if segue.identifier == "marsRover" {
+            guard let marsRoverVC = segue.destination as? MarsRoverTableViewController else { return }
+            marsRoverVC.fetchMarsRoversInfo()
+        }
     }
-}
 }
 // MARK: - Networking
 extension MainViewController {
@@ -74,33 +74,32 @@ extension MainViewController {
             do {
                 let photo = try JSONDecoder().decode(PhotoOfToday.self, from: data)
                 print(photo)
-            }catch let error {
+            } catch let error {
                 print(error.localizedDescription)
             }
-            
         }.resume()
     }
     
-  // Ниже функцию заводил для проверки, данные загружаются
-  /*   private func marsRoverPhotosButtonPressed() {
-        guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
-                print(roverInfo)
-            }catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
-    }
-    */
+    // Ниже функцию заводил для проверки, данные загружаются
+    /*   private func marsRoverPhotosButtonPressed() {
+     guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
+     
+     URLSession.shared.dataTask(with: url) { data, _, error in
+     guard let data = data else {
+     print(error?.localizedDescription ?? "No error description")
+     return
+     }
+     
+     do {
+     let roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
+     print(roverInfo)
+     }catch let error {
+     print(error.localizedDescription)
+     }
+     
+     }.resume()
+     }
+     */
     
     private func geomagneticStormButtonPressed() {
         guard let url = URL(string: Link.geomagneticStorm.rawValue) else { return }
@@ -114,10 +113,9 @@ extension MainViewController {
             do {
                 let geomagneticStorm = try JSONDecoder().decode([GeomagneticStorm].self, from: data)
                 print(geomagneticStorm)
-            }catch let error {
+            } catch let error {
                 print(error.localizedDescription)
             }
-            
         }.resume()
     }
     
