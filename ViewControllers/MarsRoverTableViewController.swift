@@ -8,30 +8,31 @@
 import UIKit
 
 class MarsRoverTableViewController: UITableViewController {
-
-    private var roverInfo: [MarsRoverPhoto] = []
+    
+    private var roverInfo: PhotoOfMarsRover?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 150
-       
+        tableView.tableFooterView = UIView()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        roverInfo.count
+        
+        roverInfo?.photos?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MarsRoverCell
-        let rover = roverInfo[indexPath.row]
+        
+        let rover = roverInfo?.photos?[indexPath.row]
         cell.configure(with: rover)
         return cell
     }
     
-
+    
 }
 
 //MARK: - Networking
@@ -46,8 +47,10 @@ extension MarsRoverTableViewController {
             }
             
             do {
-                self.roverInfo = try JSONDecoder().decode([MarsRoverPhoto].self, from: data)
-                
+                self.roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             } catch let error {
                 print(error.localizedDescription)
             }

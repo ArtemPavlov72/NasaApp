@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainViewController-->
+        <!--NASA main page-->
         <scene sceneID="PWL-U7-405">
             <objects>
                 <collectionViewController id="tK8-OJ-CEv" customClass="MainViewController" customModule="NasaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwR-Kg-SFc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TwR-Kg-SFc">
                                             <rect key="frame" x="135" y="30" width="70" height="40.5"/>
                                             <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,15 +59,104 @@
                             <outlet property="delegate" destination="tK8-OJ-CEv" id="0zK-bK-fs6"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="MainViewController" id="m5e-sJ-aY5"/>
+                    <navigationItem key="navigationItem" title="NASA main page" id="m5e-sJ-aY5"/>
                     <connections>
                         <segue destination="2ln-hn-9S1" kind="show" identifier="showImage" id="cEF-Ho-XPf"/>
                         <segue destination="9af-u9-qsW" kind="show" identifier="marsRover" id="oJA-k7-9hd"/>
+                        <segue destination="k4h-bb-eeH" kind="show" identifier="photoOfDay" id="hnH-ld-jD9"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jci-X0-HTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1215" y="237"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="v4o-dv-HtV">
+            <objects>
+                <tableViewController id="k4h-bb-eeH" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uTF-p5-VXO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageOfDayCell" rowHeight="257" id="mOO-wb-mbe" customClass="ImageOfDayCell" customModule="NasaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="257"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mOO-wb-mbe" id="wuE-Cb-Kgp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6RD-1W-7Pd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="6RD-1W-7Pd" secondAttribute="bottom" id="Ia1-UT-vq5"/>
+                                        <constraint firstItem="6RD-1W-7Pd" firstAttribute="top" secondItem="wuE-Cb-Kgp" secondAttribute="top" id="K3B-Ad-105"/>
+                                        <constraint firstItem="6RD-1W-7Pd" firstAttribute="leading" secondItem="wuE-Cb-Kgp" secondAttribute="leading" id="bVC-qp-RZH"/>
+                                        <constraint firstAttribute="trailing" secondItem="6RD-1W-7Pd" secondAttribute="trailing" id="yAQ-8E-cRl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOfDay" destination="6RD-1W-7Pd" id="693-cQ-vbk"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsOfImageOfDay" rowHeight="238" id="Jlu-dj-wbI" customClass="ImageOfDayCell" customModule="NasaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="281.5" width="375" height="238"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jlu-dj-wbI" id="pZx-w1-vnw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-sD-mHa">
+                                            <rect key="frame" x="24" y="11" width="327" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xU-IT-sDS">
+                                            <rect key="frame" x="24" y="43" width="327" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explanation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-EJ-T9S">
+                                            <rect key="frame" x="24" y="72" width="327" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="A4r-sD-mHa" firstAttribute="top" secondItem="pZx-w1-vnw" secondAttribute="topMargin" id="289-w5-vix"/>
+                                        <constraint firstItem="5xU-IT-sDS" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="AzR-z7-YaA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5xU-IT-sDS" secondAttribute="trailing" constant="8" id="CGT-uP-kKR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QIi-EJ-T9S" secondAttribute="trailing" constant="8" id="Ibf-qW-wM8"/>
+                                        <constraint firstItem="A4r-sD-mHa" firstAttribute="centerX" secondItem="pZx-w1-vnw" secondAttribute="centerX" id="JKU-lF-vEx"/>
+                                        <constraint firstItem="QIi-EJ-T9S" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="VGb-gx-DMV"/>
+                                        <constraint firstItem="5xU-IT-sDS" firstAttribute="top" secondItem="A4r-sD-mHa" secondAttribute="bottom" constant="8" id="Y15-eH-4ob"/>
+                                        <constraint firstItem="A4r-sD-mHa" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="aEk-cG-PUA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="A4r-sD-mHa" secondAttribute="trailing" constant="8" id="gQV-ko-4E6"/>
+                                        <constraint firstItem="QIi-EJ-T9S" firstAttribute="top" secondItem="5xU-IT-sDS" secondAttribute="bottom" constant="8" id="qLW-vI-XzR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateOfImage" destination="5xU-IT-sDS" id="zLR-mh-JlN"/>
+                                    <outlet property="explanationOfImage" destination="QIi-EJ-T9S" id="vAo-z4-QaP"/>
+                                    <outlet property="titleOfImage" destination="A4r-sD-mHa" id="Nb3-iu-bbh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="k4h-bb-eeH" id="Nbw-DK-OD4"/>
+                            <outlet property="delegate" destination="k4h-bb-eeH" id="PQI-Sq-pHd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="JyQ-sR-ZQs"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1Z-LU-oRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997.5999999999999" y="236.13193403298354"/>
         </scene>
         <!--Mars Rover Table View Controller-->
         <scene sceneID="6iA-oo-bbZ">
@@ -85,7 +174,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R4z-AC-Cl2">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R4z-AC-Cl2">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="rV6-qc-uev"/>
@@ -151,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwr-JM-ZHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997.5999999999999" y="753.37331334332839"/>
+            <point key="canvasLocation" x="1998" y="1007"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="KC7-ye-7KK">
@@ -187,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifz-RM-sJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997.5999999999999" y="-143.47826086956522"/>
+            <point key="canvasLocation" x="1998" y="-495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fQF-t9-VQN">
