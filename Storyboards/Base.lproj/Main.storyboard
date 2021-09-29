@@ -70,79 +70,67 @@
             </objects>
             <point key="canvasLocation" x="1215" y="237"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Image Of Day Table View Controller-->
         <scene sceneID="v4o-dv-HtV">
             <objects>
-                <tableViewController id="k4h-bb-eeH" sceneMemberID="viewController">
+                <tableViewController id="k4h-bb-eeH" customClass="ImageOfDayTableViewController" customModule="NasaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uTF-p5-VXO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageOfDayCell" rowHeight="257" id="mOO-wb-mbe" customClass="ImageOfDayCell" customModule="NasaApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="257"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mOO-wb-mbe" id="wuE-Cb-Kgp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6RD-1W-7Pd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="6RD-1W-7Pd" secondAttribute="bottom" id="Ia1-UT-vq5"/>
-                                        <constraint firstItem="6RD-1W-7Pd" firstAttribute="top" secondItem="wuE-Cb-Kgp" secondAttribute="top" id="K3B-Ad-105"/>
-                                        <constraint firstItem="6RD-1W-7Pd" firstAttribute="leading" secondItem="wuE-Cb-Kgp" secondAttribute="leading" id="bVC-qp-RZH"/>
-                                        <constraint firstAttribute="trailing" secondItem="6RD-1W-7Pd" secondAttribute="trailing" id="yAQ-8E-cRl"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="imageOfDay" destination="6RD-1W-7Pd" id="693-cQ-vbk"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsOfImageOfDay" rowHeight="238" id="Jlu-dj-wbI" customClass="ImageOfDayCell" customModule="NasaApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="281.5" width="375" height="238"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsOfImageOfDay" rowHeight="466" id="Jlu-dj-wbI" customClass="ImageOfDayCell" customModule="NasaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="466"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jlu-dj-wbI" id="pZx-w1-vnw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="466"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-sD-mHa">
-                                            <rect key="frame" x="24" y="11" width="327" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xU-IT-sDS">
-                                            <rect key="frame" x="24" y="43" width="327" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explanation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-EJ-T9S">
-                                            <rect key="frame" x="24" y="72" width="327" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ElC-pK-zvc">
+                                            <rect key="frame" x="50" y="8" width="275" height="210"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="210" id="xOJ-2a-fpG"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zhh-gF-h17">
+                                            <rect key="frame" x="24" y="228" width="327" height="81"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-sD-mHa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xU-IT-sDS">
+                                                    <rect key="frame" x="0.0" y="32" width="327" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explanation" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-EJ-T9S">
+                                                    <rect key="frame" x="0.0" y="60.5" width="327" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="A4r-sD-mHa" firstAttribute="top" secondItem="pZx-w1-vnw" secondAttribute="topMargin" id="289-w5-vix"/>
-                                        <constraint firstItem="5xU-IT-sDS" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="AzR-z7-YaA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="5xU-IT-sDS" secondAttribute="trailing" constant="8" id="CGT-uP-kKR"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QIi-EJ-T9S" secondAttribute="trailing" constant="8" id="Ibf-qW-wM8"/>
-                                        <constraint firstItem="A4r-sD-mHa" firstAttribute="centerX" secondItem="pZx-w1-vnw" secondAttribute="centerX" id="JKU-lF-vEx"/>
-                                        <constraint firstItem="QIi-EJ-T9S" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="VGb-gx-DMV"/>
-                                        <constraint firstItem="5xU-IT-sDS" firstAttribute="top" secondItem="A4r-sD-mHa" secondAttribute="bottom" constant="8" id="Y15-eH-4ob"/>
-                                        <constraint firstItem="A4r-sD-mHa" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="aEk-cG-PUA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="A4r-sD-mHa" secondAttribute="trailing" constant="8" id="gQV-ko-4E6"/>
-                                        <constraint firstItem="QIi-EJ-T9S" firstAttribute="top" secondItem="5xU-IT-sDS" secondAttribute="bottom" constant="8" id="qLW-vI-XzR"/>
+                                        <constraint firstItem="ElC-pK-zvc" firstAttribute="top" secondItem="pZx-w1-vnw" secondAttribute="top" constant="8" id="3KI-cO-hJS"/>
+                                        <constraint firstItem="ElC-pK-zvc" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leading" constant="50" id="600-y0-uXz"/>
+                                        <constraint firstItem="Zhh-gF-h17" firstAttribute="leading" secondItem="pZx-w1-vnw" secondAttribute="leadingMargin" constant="8" id="FC3-eu-gMu"/>
+                                        <constraint firstItem="Zhh-gF-h17" firstAttribute="centerX" secondItem="pZx-w1-vnw" secondAttribute="centerX" id="HVK-wY-CpI"/>
+                                        <constraint firstItem="ElC-pK-zvc" firstAttribute="centerX" secondItem="pZx-w1-vnw" secondAttribute="centerX" id="VBy-FP-sLq"/>
+                                        <constraint firstAttribute="trailing" secondItem="ElC-pK-zvc" secondAttribute="trailing" constant="50" id="Y8C-7F-aHN"/>
+                                        <constraint firstItem="Zhh-gF-h17" firstAttribute="top" secondItem="ElC-pK-zvc" secondAttribute="bottom" constant="10" id="wXL-Fn-BoU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Zhh-gF-h17" secondAttribute="trailing" constant="8" id="yTf-Ih-Srp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateOfImage" destination="5xU-IT-sDS" id="zLR-mh-JlN"/>
                                     <outlet property="explanationOfImage" destination="QIi-EJ-T9S" id="vAo-z4-QaP"/>
+                                    <outlet property="imageOfDay" destination="ElC-pK-zvc" id="UL6-FN-820"/>
                                     <outlet property="titleOfImage" destination="A4r-sD-mHa" id="Nb3-iu-bbh"/>
                                 </connections>
                             </tableViewCell>

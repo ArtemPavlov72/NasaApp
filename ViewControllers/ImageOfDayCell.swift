@@ -14,17 +14,19 @@ class ImageOfDayCell: UITableViewCell {
     @IBOutlet var dateOfImage: UILabel!
     @IBOutlet var explanationOfImage: UILabel!
     
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func configure(with photoOfDay: PhotoOfToday?) {
+        titleOfImage.text = "\(photoOfDay?.title ?? "")"
+        dateOfImage.text = "Date: \(photoOfDay?.date ?? "")"
+        explanationOfImage.text = "Explanation: \(photoOfDay?.explanation ?? "")"
+        DispatchQueue.global().async {
+            guard let url = URL(string: photoOfDay?.url ?? "") else { return }
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                self.imageOfDay.image = UIImage(data: imageData)
+            }
+        }
+    }
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        
-    }
-
-}

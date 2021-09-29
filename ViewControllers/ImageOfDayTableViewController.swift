@@ -1,26 +1,25 @@
 //
-//  MarsRoverTableViewController.swift
+//  ImageOfDayTableViewController.swift
 //  NasaApp
 //
-//  Created by iMac on 26.09.2021.
+//  Created by iMac on 28.09.2021.
 //
 
 import UIKit
 
-class MarsRoverTableViewController: UITableViewController {
-    
-    private var roverInfo: PhotoOfMarsRover?
+class ImageOfDayTableViewController: UITableViewController {
+
+    private var photo: PhotoOfToday?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 150
+        tableView.rowHeight = 700
         tableView.tableFooterView = UIView()
     }
-    
+
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        roverInfo?.photos?.count ?? 1
+        1
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -28,18 +27,20 @@ class MarsRoverTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MarsRoverCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detailsOfImageOfDay", for: indexPath) as! ImageOfDayCell
         
-        let rover = roverInfo?.photos?[indexPath.row]
-        cell.configure(with: rover)
-        return cell
-    }
+        let photoOfDay = photo
+                cell.configure(with: photoOfDay)
+                return cell
+        
+        }
+
 }
 
 //MARK: - Networking
-extension MarsRoverTableViewController {
-    func fetchMarsRoversInfo() {
-        guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
+extension ImageOfDayTableViewController {
+    func photoOfDayInfo() {
+        guard let url = URL(string: Link.pictureOfToday.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -48,7 +49,7 @@ extension MarsRoverTableViewController {
             }
             
             do {
-                self.roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
+                self.photo = try JSONDecoder().decode(PhotoOfToday.self, from: data)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

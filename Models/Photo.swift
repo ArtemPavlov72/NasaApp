@@ -34,3 +34,9 @@ struct RoverSpecs: Decodable {
     let landing_date: String?
     let status: String?
 }
+
+//GeomagneticStorm
+struct GeomagneticStorm: Decodable {
+    let startTime: String?
+    let link: String?
+}

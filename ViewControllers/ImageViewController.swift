@@ -20,8 +20,16 @@ class ImageViewController: UIViewController {
     }
     
     private func fetchImage() {
+        DispatchQueue.global().async {
         guard let url = URL(string: Link.imageURL.rawValue) else {return}
-        
+        guard let imageData = try? Data(contentsOf: url) else { return }
+        DispatchQueue.main.async {
+            let image = UIImage(data: imageData)
+            self.imageView.image = image
+            self.activityIndicator.stopAnimating()
+        }
+        }
+            /*
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, let response = response else {
                 print(error?.localizedDescription ?? "No error description")
@@ -34,7 +42,7 @@ class ImageViewController: UIViewController {
                 self.imageView.image = image
                 self.activityIndicator.stopAnimating()
             }
-        }.resume()
+        }.resume() */
     }
 }
 
