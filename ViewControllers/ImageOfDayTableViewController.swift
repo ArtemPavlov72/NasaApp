@@ -13,7 +13,8 @@ class ImageOfDayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 700
+       // tableView.rowHeight = 700
+       
         tableView.tableFooterView = UIView()
     }
 
@@ -25,7 +26,7 @@ class ImageOfDayTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailsOfImageOfDay", for: indexPath) as! ImageOfDayCell
         
