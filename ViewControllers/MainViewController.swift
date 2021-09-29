@@ -43,58 +43,40 @@ class MainViewController: UICollectionViewController {
         }
     }
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "marsRover" {
             guard let marsRoverVC = segue.destination as? MarsRoverTableViewController else { return }
             marsRoverVC.fetchMarsRoversInfo()
-        }
-        if segue.identifier == "photoOfDay" {
+        } else {
             guard let imageOfDayVC = segue.destination as? ImageOfDayTableViewController else { return }
             imageOfDayVC.photoOfDayInfo()
         }
     }
 }
+
 // MARK: - Networking
 extension MainViewController {
-    private func pictureOfTodayButtonPressed() {
-        guard let url = URL(string: Link.pictureOfToday.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let photo = try JSONDecoder().decode(PhotoOfToday.self, from: data)
-                print(photo)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
-        
-    private func geomagneticStormButtonPressed() {
-        guard let url = URL(string: Link.geomagneticStorm.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let geomagneticStorm = try JSONDecoder().decode([GeomagneticStorm].self, from: data)
-                print(geomagneticStorm)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
     
+    private func geomagneticStormButtonPressed() {
+        NetworkManager.shared.fetch(dataType: [GeomagneticStorm].self, from: Link.geomagneticStorm.rawValue) { result in
+            switch result {
+            case .success(let storms):
+                for storm in storms {
+                    print(
+                        """
+                        Geomagnetic storm had been started on: \(storm.startTime ?? "")
+                        You can find more information here: \(storm.link ?? "")
+                        """
+                    )
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
+
 // отображение cell под разные экраны
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

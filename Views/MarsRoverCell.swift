@@ -17,9 +17,9 @@ class MarsRoverCell: UITableViewCell {
     func configure(with rover: MarsRoverPhoto?) {
         nameOfRover.text = rover?.rover?.name
         idPhoto.text = "ID of Mars Rover: \(rover?.id ?? 0)"
-        dateOfPhoto.text = "Date of photo: \(rover?.earth_date ?? "")"
+        dateOfPhoto.text = "Date of photo: \(rover?.earthDate ?? "")"
         DispatchQueue.global().async {
-            guard let url = URL(string: rover?.img_src ?? "") else { return }
+            guard let url = URL(string: rover?.imgSrc ?? "") else { return }
             guard let imageData = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
                 self.marsRoverPhoto.image = UIImage(data: imageData)

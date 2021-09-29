@@ -13,7 +13,6 @@ class ImageOfDayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // tableView.rowHeight = 700
        
         tableView.tableFooterView = UIView()
     }
@@ -41,22 +40,14 @@ class ImageOfDayTableViewController: UITableViewController {
 //MARK: - Networking
 extension ImageOfDayTableViewController {
     func photoOfDayInfo() {
-        guard let url = URL(string: Link.pictureOfToday.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+        NetworkManager.shared.fetch(dataType: PhotoOfToday.self, from: Link.pictureOfToday.rawValue, convertFromSnakeCase: false) { result in
+            switch result {
+            case .success(let photo):
+                self.photo = photo
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-            do {
-                self.photo = try JSONDecoder().decode(PhotoOfToday.self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        }
     }
 }
