@@ -2,7 +2,7 @@
 //  File.swift
 //  NasaApp
 //
-//  Created by iMac on 26.09.2021.
+//  Created by Artem Pavlov on 26.09.2021.
 //
 
 import Foundation
@@ -24,14 +24,14 @@ struct PhotoOfMarsRover: Decodable {
 struct MarsRoverPhoto: Decodable {
     let id: Int?
     let sol: Int?
-    let img_src: String?
-    let earth_date: String?
+    let imgSrc: String?
+    let earthDate: String?
     let rover: RoverSpecs?
 }
 
 struct RoverSpecs: Decodable {
     let name: String?
-    let landing_date: String?
+    let landingDate: String?
     let status: String?
 }
 

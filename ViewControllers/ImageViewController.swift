@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
 //  NasaApp
-//
-//  Created by iMac on 24.09.2021.
+// 
+//  Created by Artem Pavlov on 26.09.2021.
 //
 
 import UIKit
@@ -20,29 +20,15 @@ class ImageViewController: UIViewController {
     }
     
     private func fetchImage() {
-        DispatchQueue.global().async {
-        guard let url = URL(string: Link.imageURL.rawValue) else {return}
-        guard let imageData = try? Data(contentsOf: url) else { return }
-        DispatchQueue.main.async {
-            let image = UIImage(data: imageData)
-            self.imageView.image = image
-            self.activityIndicator.stopAnimating()
-        }
-        }
-            /*
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            guard let image = UIImage(data: data) else {return}
-            
-            DispatchQueue.main.async {
-                self.imageView.image = image
+        NetworkManager.shared.fetchImage(from: Link.imageURL.rawValue) { result in
+            switch result {
+            case .success(let imageData):
+                self.imageView.image = UIImage(data: imageData)
                 self.activityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-        }.resume() */
+        }
     }
 }
 

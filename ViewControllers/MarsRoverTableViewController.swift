@@ -1,8 +1,8 @@
 //
 //  MarsRoverTableViewController.swift
 //  NasaApp
-//
-//  Created by iMac on 26.09.2021.
+// 
+//  Created by Artem Pavlov on 26.09.2021.
 //
 
 import UIKit
@@ -18,17 +18,21 @@ class MarsRoverTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         
         roverInfo?.photos?.count ?? 1
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MarsRoverCell
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "cell", for: indexPath) as! MarsRoverCell
         
         let rover = roverInfo?.photos?[indexPath.row]
         cell.configure(with: rover)
@@ -39,22 +43,16 @@ class MarsRoverTableViewController: UITableViewController {
 //MARK: - Networking
 extension MarsRoverTableViewController {
     func fetchMarsRoversInfo() {
-        guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+        NetworkManager.shared.fetch(dataType: PhotoOfMarsRover.self,
+                                    from: Link.marsRoverPhotos.rawValue,
+                                    convertFromSnakeCase: true) { result in
+            switch result {
+            case .success(let rover):
+                self.roverInfo = rover
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-            do {
-                self.roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        }
     }
 }
