@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8816FCB627047AD100A07448 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816FCB527047AD100A07448 /* NetworkManager.swift */; };
 		885B219826FE4F6E00D15041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219726FE4F6E00D15041 /* AppDelegate.swift */; };
 		885B219A26FE4F6E00D15041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219926FE4F6E00D15041 /* SceneDelegate.swift */; };
 		885B219C26FE4F6E00D15041 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B219B26FE4F6E00D15041 /* ImageViewController.swift */; };
@@ -17,15 +18,20 @@
 		885B21B226FE54BD00D15041 /* Astronomy Picture of the Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */; };
 		885B21B426FE569100D15041 /* Geomagnetic Storm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B21B326FE569100D15041 /* Geomagnetic Storm.swift */; };
 		889845852702171A0067A349 /* ImageOfDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889845842702171A0067A349 /* ImageOfDayCell.swift */; };
+		8898458727036EFA0067A349 /* ImageOfDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8898458627036EFA0067A349 /* ImageOfDayTableViewController.swift */; };
 		88DA627427004E6D00BAF9D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA627327004E6D00BAF9D1 /* MainViewController.swift */; };
 		88DA62762700508B00BAF9D1 /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62752700508A00BAF9D1 /* UserActionCell.swift */; };
-		88DA62782700AF0200BAF9D1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62772700AF0200BAF9D1 /* Photo.swift */; };
-		88DA627B2700B74700BAF9D1 /* GeomagneticStorm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA627A2700B74700BAF9D1 /* GeomagneticStorm.swift */; };
+		88DA62782700AF0200BAF9D1 /* NASA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62772700AF0200BAF9D1 /* NASA.swift */; };
 		88DA627D2700F63D00BAF9D1 /* MarsRoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA627C2700F63D00BAF9D1 /* MarsRoverTableViewController.swift */; };
 		88DA62812701008E00BAF9D1 /* MarsRoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */; };
+		E6D95EDC83C4617F9BC93A60 /* Pods_NasaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C37EA3E4BE340FA8D3E294 /* Pods_NasaApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E00EF15E228811CBEA39DA8 /* Pods-NasaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaApp.release.xcconfig"; path = "Target Support Files/Pods-NasaApp/Pods-NasaApp.release.xcconfig"; sourceTree = "<group>"; };
+		3CD7ED95D8E23A8AED51C68F /* Pods-NasaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaApp.debug.xcconfig"; path = "Target Support Files/Pods-NasaApp/Pods-NasaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		72C37EA3E4BE340FA8D3E294 /* Pods_NasaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8816FCB527047AD100A07448 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		885B219426FE4F6E00D15041 /* NasaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		885B219726FE4F6E00D15041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		885B219926FE4F6E00D15041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,10 +44,10 @@
 		885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Astronomy Picture of the Day.swift"; sourceTree = "<group>"; };
 		885B21B326FE569100D15041 /* Geomagnetic Storm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geomagnetic Storm.swift"; sourceTree = "<group>"; };
 		889845842702171A0067A349 /* ImageOfDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOfDayCell.swift; sourceTree = "<group>"; };
+		8898458627036EFA0067A349 /* ImageOfDayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOfDayTableViewController.swift; sourceTree = "<group>"; };
 		88DA627327004E6D00BAF9D1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		88DA62752700508A00BAF9D1 /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
-		88DA62772700AF0200BAF9D1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		88DA627A2700B74700BAF9D1 /* GeomagneticStorm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeomagneticStorm.swift; sourceTree = "<group>"; };
+		88DA62772700AF0200BAF9D1 /* NASA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASA.swift; sourceTree = "<group>"; };
 		88DA627C2700F63D00BAF9D1 /* MarsRoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverTableViewController.swift; sourceTree = "<group>"; };
 		88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,24 +57,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D95EDC83C4617F9BC93A60 /* Pods_NasaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54E65550C39E365EF0C2A007 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CD7ED95D8E23A8AED51C68F /* Pods-NasaApp.debug.xcconfig */,
+				0E00EF15E228811CBEA39DA8 /* Pods-NasaApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8816FCB427047A4700A07448 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88DA62752700508A00BAF9D1 /* UserActionCell.swift */,
+				88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */,
+				889845842702171A0067A349 /* ImageOfDayCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8816FCB727047ADE00A07448 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8816FCB527047AD100A07448 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		885B218B26FE4F6E00D15041 = {
 			isa = PBXGroup;
 			children = (
+				885B21AB26FE4F9900D15041 /* ViewControllers */,
+				88DA62792700B24900BAF9D1 /* Models */,
+				885B21AC26FE4FAB00D15041 /* Storyboards */,
+				8816FCB727047ADE00A07448 /* Services */,
 				885B21B326FE569100D15041 /* Geomagnetic Storm.swift */,
 				885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */,
 				885B21AF26FE50B200D15041 /* Mars Rover Photos.swift */,
-				885B21AC26FE4FAB00D15041 /* Storyboards */,
-				885B21AB26FE4F9900D15041 /* ViewControllers */,
-				88DA62792700B24900BAF9D1 /* Models */,
+				8816FCB427047A4700A07448 /* Views */,
 				885B21AE26FE500300D15041 /* Resources */,
 				885B219626FE4F6E00D15041 /* NasaApp */,
 				885B219526FE4F6E00D15041 /* Products */,
+				54E65550C39E365EF0C2A007 /* Pods */,
+				F3E2A4F60C255771B5F7CC59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,10 +131,8 @@
 			children = (
 				885B219B26FE4F6E00D15041 /* ImageViewController.swift */,
 				88DA627327004E6D00BAF9D1 /* MainViewController.swift */,
-				88DA62752700508A00BAF9D1 /* UserActionCell.swift */,
 				88DA627C2700F63D00BAF9D1 /* MarsRoverTableViewController.swift */,
-				88DA62802701008E00BAF9D1 /* MarsRoverCell.swift */,
-				889845842702171A0067A349 /* ImageOfDayCell.swift */,
+				8898458627036EFA0067A349 /* ImageOfDayTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -131,10 +167,17 @@
 		88DA62792700B24900BAF9D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88DA62772700AF0200BAF9D1 /* Photo.swift */,
-				88DA627A2700B74700BAF9D1 /* GeomagneticStorm.swift */,
+				88DA62772700AF0200BAF9D1 /* NASA.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3E2A4F60C255771B5F7CC59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72C37EA3E4BE340FA8D3E294 /* Pods_NasaApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 885B21A826FE4F7000D15041 /* Build configuration list for PBXNativeTarget "NasaApp" */;
 			buildPhases = (
+				800202AB5E2415F57DD09F09 /* [CP] Check Pods Manifest.lock */,
 				885B219026FE4F6E00D15041 /* Sources */,
 				885B219126FE4F6E00D15041 /* Frameworks */,
 				885B219226FE4F6E00D15041 /* Resources */,
+				230295B904A48567CC38878E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +247,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		230295B904A48567CC38878E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NasaApp/Pods-NasaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NasaApp/Pods-NasaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NasaApp/Pods-NasaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		800202AB5E2415F57DD09F09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NasaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		885B219026FE4F6E00D15041 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -212,12 +299,13 @@
 				885B21B426FE569100D15041 /* Geomagnetic Storm.swift in Sources */,
 				885B219826FE4F6E00D15041 /* AppDelegate.swift in Sources */,
 				88DA62762700508B00BAF9D1 /* UserActionCell.swift in Sources */,
+				8898458727036EFA0067A349 /* ImageOfDayTableViewController.swift in Sources */,
 				885B219A26FE4F6E00D15041 /* SceneDelegate.swift in Sources */,
 				885B21B026FE50B200D15041 /* Mars Rover Photos.swift in Sources */,
 				88DA62812701008E00BAF9D1 /* MarsRoverCell.swift in Sources */,
-				88DA627B2700B74700BAF9D1 /* GeomagneticStorm.swift in Sources */,
 				889845852702171A0067A349 /* ImageOfDayCell.swift in Sources */,
-				88DA62782700AF0200BAF9D1 /* Photo.swift in Sources */,
+				8816FCB627047AD100A07448 /* NetworkManager.swift in Sources */,
+				88DA62782700AF0200BAF9D1 /* NASA.swift in Sources */,
 				88DA627427004E6D00BAF9D1 /* MainViewController.swift in Sources */,
 				88DA627D2700F63D00BAF9D1 /* MarsRoverTableViewController.swift in Sources */,
 			);
@@ -363,6 +451,7 @@
 		};
 		885B21A926FE4F7000D15041 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD7ED95D8E23A8AED51C68F /* Pods-NasaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +471,7 @@
 		};
 		885B21AA26FE4F7000D15041 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E00EF15E228811CBEA39DA8 /* Pods-NasaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

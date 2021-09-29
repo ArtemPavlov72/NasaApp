@@ -45,7 +45,7 @@ class MainViewController: UICollectionViewController {
         
         switch userAction {
         case .downloadImage: performSegue(withIdentifier: "showImage", sender: nil)
-        case .pictureOfToday: pictureOfTodayButtonPressed()
+        case .pictureOfToday: performSegue(withIdentifier: "photoOfDay", sender: nil)
         case .marsRoverPhotos: performSegue(withIdentifier: "marsRover", sender: nil)
         case .geomagneticStorm: geomagneticStormButtonPressed()
         }
@@ -57,6 +57,10 @@ class MainViewController: UICollectionViewController {
         if segue.identifier == "marsRover" {
             guard let marsRoverVC = segue.destination as? MarsRoverTableViewController else { return }
             marsRoverVC.fetchMarsRoversInfo()
+        }
+        if segue.identifier == "photoOfDay" {
+            guard let imageOfDayVC = segue.destination as? ImageOfDayTableViewController else { return }
+            imageOfDayVC.photoOfDayInfo()
         }
     }
 }
