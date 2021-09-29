@@ -2,7 +2,7 @@
 //  File.swift
 //  NasaApp
 //
-//  Created by iMac on 26.09.2021.
+//  Created by Artem Pavlov on 26.09.2021.
 //
 
 import Foundation

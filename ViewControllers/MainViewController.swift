@@ -2,21 +2,14 @@
 //  MainCollectionViewController.swift
 //  NasaApp
 //
-//  Created by iMac on 26.09.2021.
+//  Created by Artem Pavlov on 26.09.2021.
 //
 
 import UIKit
 
-enum Link: String {
-    case imageURL = "https://apod.nasa.gov/apod/image/2109/RedSquare_Tuthill_960.jpg"
-    case pictureOfToday = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
-    case marsRoverPhotos = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
-    case geomagneticStorm = "https://api.nasa.gov/DONKI/GST?startDate=2016-01-01&endDate=2016-01-30&api_key=DEMO_KEY"
-}
-
 enum UserAction: String, CaseIterable {
-    case downloadImage = "Today's NASA photo"
-    case pictureOfToday = "Info about today's photo"
+    case downloadImage = "NASA photo"
+    case pictureOfToday = "Today's NASA media"
     case marsRoverPhotos = "Mars Rover photos"
     case geomagneticStorm = "Geomagnetic Storm info"
 }
@@ -32,7 +25,6 @@ class MainViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserActionCell
-        
         cell.userActionLabel.text = userActions[indexPath.item].rawValue
         
         return cell
@@ -83,28 +75,7 @@ extension MainViewController {
             }
         }.resume()
     }
-    
-    // Ниже функцию заводил для проверки, данные загружаются
-    /*   private func marsRoverPhotosButtonPressed() {
-     guard let url = URL(string: Link.marsRoverPhotos.rawValue) else { return }
-     
-     URLSession.shared.dataTask(with: url) { data, _, error in
-     guard let data = data else {
-     print(error?.localizedDescription ?? "No error description")
-     return
-     }
-     
-     do {
-     let roverInfo = try JSONDecoder().decode(PhotoOfMarsRover.self, from: data)
-     print(roverInfo)
-     }catch let error {
-     print(error.localizedDescription)
-     }
-     
-     }.resume()
-     }
-     */
-    
+        
     private func geomagneticStormButtonPressed() {
         guard let url = URL(string: Link.geomagneticStorm.rawValue) else { return }
         
