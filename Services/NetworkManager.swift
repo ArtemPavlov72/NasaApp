@@ -38,7 +38,7 @@ class NetworkManager {
             }
             DispatchQueue.main.async {
                 completion(.success(imageData))
-            }
+            } 
         }
     }
 }
