@@ -91,6 +91,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8816FCB8270573AC00A07448 /* for delete */ = {
+			isa = PBXGroup;
+			children = (
+				885B21AF26FE50B200D15041 /* Mars Rover Photos.swift */,
+				885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */,
+				885B21B326FE569100D15041 /* Geomagnetic Storm.swift */,
+			);
+			path = "for delete";
+			sourceTree = "<group>";
+		};
 		885B218B26FE4F6E00D15041 = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +108,6 @@
 				88DA62792700B24900BAF9D1 /* Models */,
 				885B21AC26FE4FAB00D15041 /* Storyboards */,
 				8816FCB727047ADE00A07448 /* Services */,
-				885B21B326FE569100D15041 /* Geomagnetic Storm.swift */,
-				885B21B126FE54BD00D15041 /* Astronomy Picture of the Day.swift */,
-				885B21AF26FE50B200D15041 /* Mars Rover Photos.swift */,
 				8816FCB427047A4700A07448 /* Views */,
 				885B21AE26FE500300D15041 /* Resources */,
 				885B219626FE4F6E00D15041 /* NasaApp */,
@@ -159,6 +166,7 @@
 		885B21AE26FE500300D15041 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8816FCB8270573AC00A07448 /* for delete */,
 				885B21A026FE4F7000D15041 /* Assets.xcassets */,
 			);
 			path = Resources;
