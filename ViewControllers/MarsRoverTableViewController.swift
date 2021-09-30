@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MarsRoverTableViewController: UITableViewController {
     
@@ -42,7 +43,24 @@ class MarsRoverTableViewController: UITableViewController {
 
 //MARK: - Networking
 extension MarsRoverTableViewController {
+//через alamofire:
     func fetchMarsRoversInfo() {
+        NetworkManager.shared.fetchDataWithAlamofire(Link.marsRoverPhotos.rawValue) { result in
+            switch result {
+            case .success(let rovers):
+                self.roverInfo = rovers
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
+    
+    
+// работающий метод:
+  /*  func fetchMarsRoversInfo() {
         NetworkManager.shared.fetch(dataType: PhotoOfMarsRover.self,
                                     from: Link.marsRoverPhotos.rawValue,
                                     convertFromSnakeCase: true) { result in
@@ -54,5 +72,5 @@ extension MarsRoverTableViewController {
                 print(error)
             }
         }
-    }
+    } */
 }
