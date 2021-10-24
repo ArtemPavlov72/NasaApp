@@ -10,7 +10,8 @@ import Alamofire
 
 class MarsRoverTableViewController: UITableViewController {
     
-    private var roverInfo: PhotoOfMarsRover?
+    //private var roverInfo: PhotoOfMarsRover?
+    private var roverPhoto: MarsRoverPhoto?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,8 @@ class MarsRoverTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        
-        roverInfo?.photos?.count ?? 1
+        roverPhoto.
+       // roverInfo?.photos?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView,
@@ -48,7 +49,7 @@ extension MarsRoverTableViewController {
         NetworkManager.shared.fetchDataWithAlamofire(Link.marsRoverPhotos.rawValue) { result in
             switch result {
             case .success(let rovers):
-                self.roverInfo = rovers
+                self.roverPhoto = rovers
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)

@@ -20,6 +20,10 @@ struct PhotoOfToday: Decodable {
 struct PhotoOfMarsRover: Decodable {
     let photos: [MarsRoverPhoto]?
     
+    init(photo: [String: Any]) {
+        let rover = photo["photos"] as? [String: Any] ?? [:]
+        photos = MarsRoverPhoto(roverPhoto: rover)
+    }
    
 }
 
