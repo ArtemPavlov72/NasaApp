@@ -17,6 +17,7 @@ struct PhotoOfToday: Decodable {
 }
 
 //MARK Mars Rover Photo
+//Надо переделать структуру, как Алексей говорил на уроке - убрать PhotoOfMarsRover
 struct PhotoOfMarsRover: Decodable {
     let photos: [MarsRoverPhoto]?
     
