@@ -69,13 +69,13 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[PhotoOfMarsRover], NetworkError>) -> Void) {
+    func fetchDataWithAlamofire(_ url: String, completion: @escaping(Result<[MarsRoverPhoto], NetworkError>) -> Void) {
         AF.request(Link.marsRoverPhotos.rawValue)
             .validate()
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    let rovers = PhotoOfMarsRover.getPhotos(from: value)
+                    let rovers = MarsRoverPhoto.getPhotos(from: value)
                     DispatchQueue.main.async {
                         completion(.success(rovers))
                     }

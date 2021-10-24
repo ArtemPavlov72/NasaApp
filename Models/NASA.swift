@@ -20,14 +20,7 @@ struct PhotoOfToday: Decodable {
 struct PhotoOfMarsRover: Decodable {
     let photos: [MarsRoverPhoto]?
     
-    init(roverPhoto: [String: Any]) {
-        photos = roverPhoto["photos"] as? [MarsRoverPhoto]
-    }
-    
-    static func getPhotos(from value: Any) -> [PhotoOfMarsRover] {        
-        guard let roversData = value as? [[String: Any]] else { return [] }
-        return roversData.compactMap { PhotoOfMarsRover(roverPhoto: $0) }
-    }
+   
 }
 
 struct MarsRoverPhoto: Decodable {
@@ -38,12 +31,19 @@ struct MarsRoverPhoto: Decodable {
     let rover: RoverSpecs?
     
     init(roverPhoto: [String: Any]) {
-        id = roverPhoto["id"] as? Int
-        sol = roverPhoto["sol"] as? Int
-        imgSrc = roverPhoto["imgSrs"] as? String
-        earthDate = roverPhoto["earthDate"] as? String
-        rover = roverPhoto["rover"] as? RoverSpecs
+            id = roverPhoto["id"] as? Int
+            sol = roverPhoto["sol"] as? Int
+            imgSrc = roverPhoto["imgSrs"] as? String
+            earthDate = roverPhoto["earthDate"] as? String
+            let roverData = roverPhoto["rover"] as? [String: Any] ?? [:]
+            rover = RoverSpecs(roverSpecs: roverData)
     }
+    
+    static func getPhotos(from value: Any) -> [MarsRoverPhoto] {
+           guard let value = value as? [String: Any] else { return [] }
+           guard let roversData = value["photos"] as? [[String: Any]] else { return [] }
+           return roversData.compactMap { MarsRoverPhoto(roverPhoto: $0) }
+       }
 }
 
 struct RoverSpecs: Decodable {
